@@ -32,7 +32,10 @@ public class Fibonacci {
         fibTemp = 0;
         while (search){
             test = fib(fibTemp);
-            if (n>test){
+            if (n<test){
+                fibTemp++;
+            }
+            else if (n>test){
                 isFib = false;
                 break;
             }
@@ -40,7 +43,8 @@ public class Fibonacci {
                 isFib = true;
                 break;
             }
-            fibTemp++;
+            test = fib(fibTemp);
+            //fibTemp++;
         }
         return isFib;
     }
@@ -52,6 +56,7 @@ public class Fibonacci {
             if (printTemp < n){
                 System.out.print(", ");
             }
+            printTemp++;
         }
     }
 
