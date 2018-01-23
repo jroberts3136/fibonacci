@@ -5,11 +5,12 @@ package com.company;
  */
 public class Fibonacci {
 
-    boolean search;
-    boolean isFib;
-    int fibTemp;
-    int printTemp;
-    int test;
+    private boolean search;
+    private boolean inSequence;
+    private int fibTemp;
+    private int printTemp;
+    private int testNum;
+    private int[] testArray;
 
     public Fibonacci(){
 
@@ -28,25 +29,69 @@ public class Fibonacci {
     }
 
     public boolean isFib(int n){
+        /*
+        if (n==0||n==1){
+            return true;
+        }
+
         search = true;
-        fibTemp = 0;
+        fibTemp = 1;
         while (search){
-            test = fib(fibTemp);
-            if (n<test){
+            testNum = fib(fibTemp);
+            if (n<testNum){
                 fibTemp++;
             }
-            else if (n>test){
-                isFib = false;
+            else if (n>testNum){
+                inSequence = false;
                 break;
             }
-            else if (n==test){
-                isFib = true;
+            else if (n==testNum){
+                inSequence = true;
                 break;
             }
-            test = fib(fibTemp);
+            testNum = fib(fibTemp);
             //fibTemp++;
         }
-        return isFib;
+        return inSequence;
+        */
+        /*
+        if (n == 0 || n == 1){
+            return true;
+        }
+
+        else if (n>0){
+            inSequence = false;
+            search = true;
+            fibTemp = 2;
+            while(search){
+                testNum = fib(fibTemp);
+                if (n<testNum){
+                    fibTemp++;
+                }
+                else if (n==testNum){
+                    inSequence = true;
+                }
+            }
+            return inSequence;
+        }
+
+        else{   //Deals with negative.
+            return false;
+        }
+        */
+        search = true;
+        testNum = 0;
+        while(search){
+            if (n==fib(testNum)){
+                search = false;
+                inSequence = true;
+            }
+            else if (n<fib(testNum)){
+                search = false;
+                inSequence = false;
+            }
+        }
+        return inSequence;
     }
 
     public void fibPrint(int n){
