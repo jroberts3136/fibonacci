@@ -5,15 +5,16 @@ package com.company;
  */
 public class Fibonacci {
 
-    private boolean search;
-    private boolean inSequence;
+    //private boolean search;
+    //private boolean inSequence;
+    int num;
     private int fibTemp;
     private int printTemp;
-    private int testNum;
-    private int[] testArray;
+    //private int testNum;
+    //private int[] testArray;
 
-    public Fibonacci(){
-
+    public Fibonacci(int n){
+        num = n;
     }
 
     public int fib (int n){
@@ -27,8 +28,8 @@ public class Fibonacci {
             return fib(n-1) + fib(n-2);
         }
     }
-
-    public boolean isFib(int n){
+    /*
+    public void isFib(){
         /*
         if (n==0||n==1){
             return true;
@@ -79,6 +80,7 @@ public class Fibonacci {
             return false;
         }
         */
+        /*
         search = true;
         testNum = 0;
         while(search){
@@ -92,7 +94,24 @@ public class Fibonacci {
             }
         }
         return inSequence;
+        */
+        /*
+        for (int i =0; i<num; i++){
+            fibTemp = fib(i);
+            if (fibTemp == num){
+                System.out.println(num + " is a fibonacci number.");
+                System.out.print("The sequence leading to it is: ");
+                fibPrint(num);
+                break;
+            }
+            else if (fibTemp > num){
+                System.out.println(num + " is not a fibonacci number.");
+                break;
+            }
+        }
+
     }
+    */
 
     public void fibPrint(int n){
         printTemp = 0;
@@ -104,7 +123,7 @@ public class Fibonacci {
             printTemp++;
         }
     }
-
+    /*
     public int factorial(int n){
         if (n==0){
             return 1;
@@ -113,4 +132,5 @@ public class Fibonacci {
             return n*factorial(n-1);
         }
     }
+    */
 }
